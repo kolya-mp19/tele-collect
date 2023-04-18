@@ -1,26 +1,18 @@
-FROM node:18.15.0-alpine3.17 AS builder
+# Используем официальный образ Node.js
+FROM node:18.15.0-alpine3.17
 
-WORKDIR /api
-COPY package.json yarn.lock ./
-RUN yarn install --frozen-lockfile
-COPY . .
+# Set the working directory to /app
+WORKDIR /app
 
-RUN yarn build
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Install production dependecies to reduce image size
-FROM node:18.15.0-alpine3.17 AS production-deps
-WORKDIR /api
-COPY package.json yarn.lock tsconfig.json ./
-RUN yarn install --production --frozen-lockfile
+# Устанавливаем зависимости приложения
+RUN yarn install
 
-# Prodution image
-FROM node:18.15.0-alpine3.17 AS runner
+# Expose port 3000 for the API
+EXPOSE 3000
 
-WORKDIR /api
+# Start Nest.js server
+CMD ["npm", "start"]
 
-COPY --from=builder /api/dist ./dist
-COPY --from=production-deps /api/node_modules ./node_modules
-COPY --from=builder /api/package.json ./package.json
-COPY --from=builder /api/tsconfig.json ./tsconfig.json
-
-CMD yarn start:prod
