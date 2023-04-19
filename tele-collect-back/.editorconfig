@@ -1,0 +1,11 @@
+root=true
+# Удалите строку ниже, если вы хотите наследовать параметры .editorconfig из каталогов, расположенных выше в иерархии
+
+[*]
+charset=utf-8
+indent_style=space
+indent_size=2
+tab_width=2
+
+[*.sh]
+end_of_line=lf

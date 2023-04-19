@@ -1,0 +1,42 @@
+{
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "editor.formatOnSave": true,
+  "css.validate": false,
+  "stylelint.enable": false,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.language": "ru,en,en-GB,en-US,ru-RU",
+  "cSpell.enabled": true,
+  "cSpell.enabledLanguageIds": [
+    "git-commit",
+    "latex",
+    "mdx",
+    "markdown",
+    "plaintext",
+    "restructuredtext",
+    "text",
+    "typescript",
+    "typescriptreact",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "css"
+  ],
+  "cSpell.words": ["nestjs", "typeorm"]
+}
