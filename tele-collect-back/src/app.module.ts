@@ -14,7 +14,7 @@ import { DataSource } from 'typeorm';
       password: 'password',
       database: 'postgres',
       entities: [],
-      synchronize: true,
+      synchronize: false,
     }),
   ],
   controllers: [AppController],
