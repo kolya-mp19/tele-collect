@@ -46,6 +46,6 @@ services:
       - postgres
 
   certbot:
-    image: certbot/cerbot:latest
+    image: certbot/certbot:latest
     volumes:
       - ./certbot/www/:/var/www/certbot/:rw
