@@ -1,0 +1,3 @@
+kolya-mp19.fun {
+    reverse_proxy backend:3000
+}
