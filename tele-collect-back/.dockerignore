@@ -1,0 +1,8 @@
+node_modules
+.husky
+Dockerfile
+yarn-error.log
+.gitignore
+env
+dist
+scripts
