@@ -1,3 +1,4 @@
 kolya-mp19.fun {
-    reverse_proxy backend:3000
+    reverse_proxy /api/* tele-collect-back:3001
+    reverse_proxy /* tele-collect-front:3000
 }
