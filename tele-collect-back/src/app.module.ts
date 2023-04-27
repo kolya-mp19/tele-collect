@@ -25,7 +25,6 @@ import { join } from 'path';
       autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
       introspection: true,
       playground: true,
-      debug: true,
     }),
   ],
 })
