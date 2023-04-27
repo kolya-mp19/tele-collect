@@ -4,7 +4,6 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { UserModule } from './user/user.module';
-import { join } from 'path';
 
 @Module({
   imports: [
@@ -21,8 +20,7 @@ import { join } from 'path';
     }),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
-      // autoSchemaFile: true,
-      autoSchemaFile: join(process.cwd(), 'src/schema.gql'),
+      autoSchemaFile: true,
       introspection: true,
       playground: true,
     }),
