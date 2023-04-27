@@ -29,7 +29,7 @@ services:
     volumes:
       - ./postgres:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: 'postgres'
+      POSTGRES_DB: 'tele-collect-bd'
       POSTGRES_USER: 'admin'
       POSTGRES_PASSWORD: 'password'
       PGDATA: '/var/lib/postgresql/data/pgdata'

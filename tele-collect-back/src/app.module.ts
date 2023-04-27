@@ -14,7 +14,7 @@ import { UserModule } from './user/user.module';
       port: 5432,
       username: 'admin',
       password: 'password',
-      database: 'postgres',
+      database: 'tele-collect-bd',
       entities: [],
       synchronize: false,
     }),
