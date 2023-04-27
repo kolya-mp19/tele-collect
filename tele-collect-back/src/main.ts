@@ -8,6 +8,7 @@ async function bootstrap() {
     logger: ['log', 'debug', 'error', 'verbose', 'warn'],
   });
   app.useGlobalPipes(new ValidationPipe());
+  app.setGlobalPrefix('api');
 
   await app.listen(3001, '0.0.0.0', (err) => console.error("app.listen(3001, '0.0.0.0')", err));
 }
