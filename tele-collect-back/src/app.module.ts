@@ -4,20 +4,12 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 import { UserModule } from './user/user.module';
+import { dataSourceOptions } from '../db/data-source';
 
 @Module({
   imports: [
     UserModule,
-    TypeOrmModule.forRoot({
-      type: 'postgres',
-      host: 'postgres',
-      port: 5432,
-      username: 'admin',
-      password: 'password',
-      database: 'tele-collect-bd',
-      entities: [],
-      synchronize: false,
-    }),
+    TypeOrmModule.forRoot(dataSourceOptions),
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: true,
