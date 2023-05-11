@@ -1,10 +1,10 @@
-import { PubSub } from 'graphql-subscriptions';
-import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
-import { UserService } from './user.service';
 import { NotFoundException } from '@nestjs/common';
-import { User } from './models/user.model';
-import { UserArgs } from './dto/user.args';
+import { Args, Mutation, Query, Resolver, Subscription } from '@nestjs/graphql';
+import { PubSub } from 'graphql-subscriptions';
 import { NewUserInput } from './dto/new-user.input';
+import { UserArgs } from './dto/user.args';
+import { User } from './models/user.model';
+import { UserService } from './user.service';
 
 const pubSub = new PubSub();
 
@@ -13,7 +13,7 @@ export class UserResolver {
   constructor(private readonly userService: UserService) {}
 
   @Query((returns) => User)
-  async user(@Args('id') id: string): Promise<User> {
+  async user(@Args('id') id: number): Promise<User> {
     const user = await this.userService.findOneById(id);
     if (!user) {
       throw new NotFoundException(id);
@@ -34,7 +34,7 @@ export class UserResolver {
   }
 
   @Mutation((returns) => Boolean)
-  async removeUser(@Args('id') id: string) {
+  async removeUser(@Args('id') id: number) {
     return this.userService.remove(id);
   }
 

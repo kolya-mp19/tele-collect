@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity('user')
 export class UserEntity {
@@ -10,4 +10,9 @@ export class UserEntity {
 
   @Column()
   name: string;
+
+  toResponse() {
+    const { id, email, name } = this;
+    return { id, email, name };
+  }
 }
