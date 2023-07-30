@@ -6,6 +6,7 @@ RUN yarn install --frozen-lockfile
 COPY . .
 
 RUN yarn build
+# RUN yarn run migration:run
 
 EXPOSE 3001
 
