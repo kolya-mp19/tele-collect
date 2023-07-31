@@ -13,4 +13,4 @@ COPY . .
 RUN yarn run build
 
 EXPOSE 3000
-CMD [ "http-server", "dist" ]
+CMD [ "http-server", '-p3000', "dist" ]
