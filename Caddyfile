@@ -1,3 +1,7 @@
+{
+    debug
+}
+
 kolya-mp19.fun {
     handle_path /api/* {
 	    reverse_proxy tele-collect-back:3001
