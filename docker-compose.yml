@@ -18,6 +18,8 @@ services:
     build: ./tele-collect-back
     container_name: tele-collect-back
     restart: always
+    ports:
+      - 3001:3001
     depends_on:
       - postgres
 
@@ -25,6 +27,8 @@ services:
     build: ./tele-collect-front
     container_name: tele-collect-front
     restart: always
+    ports:
+      - 3000:3000
     environment:
       - API_BASE_URL=http://backend:3000
     depends_on:
