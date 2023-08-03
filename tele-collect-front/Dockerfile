@@ -1,6 +1,6 @@
 FROM node:lts-alpine
 
-RUN yarn install -g http-server
+RUN yarn global add http-server
 
 WORKDIR /app
 
@@ -11,5 +11,6 @@ RUN yarn install
 COPY . .
 
 RUN yarn run build
+
 EXPOSE 3000
 CMD [ "http-server", "dist" ]

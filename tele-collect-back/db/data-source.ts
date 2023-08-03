@@ -6,7 +6,7 @@ export const dataSourceOptions: DataSourceOptions = {
   port: 5432,
   username: 'admin',
   password: 'password',
-  database: 'tele-collect',
+  database: 'tele-collect-db',
   entities: ['dist/**/*.entity.js'],
   migrations: ['dist/db/migrations/*.js'],
 };
