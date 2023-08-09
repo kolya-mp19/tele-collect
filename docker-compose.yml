@@ -29,8 +29,8 @@ services:
     restart: always
     ports:
       - 3000:3000
-    environment:
-      - API_BASE_URL=http://backend:3000
+    # environment:
+    #   - API_BASE_URL=http://backend:3000
     depends_on:
       - tele-collect-back
 
