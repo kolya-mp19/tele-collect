@@ -4,7 +4,7 @@ RUN yarn global add http-server
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json yarn.lock ./
 
 RUN yarn install
 
@@ -13,4 +13,4 @@ COPY . .
 RUN yarn run build
 
 EXPOSE 3000
-CMD [ "http-server", "dist" ]
+CMD [ "http-server", "-p", 3000, "dist" ]
