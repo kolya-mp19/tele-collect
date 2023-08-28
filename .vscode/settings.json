@@ -38,5 +38,5 @@
     "json",
     "css"
   ],
-  "cSpell.words": ["Fastify", "nestjs", "pino", "typeorm"]
+  "cSpell.words": ["Fastify", "nestjs", "pino", "typeorm", "Vuetify"]
 }
